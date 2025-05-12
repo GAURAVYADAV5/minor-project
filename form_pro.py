@@ -4,7 +4,8 @@ from wtforms import(SelectField,IntegerField,SubmitField,FloatField)
 from wtforms.validators import DataRequired,optional
 
 import pandas as pd
-data=pd.read_csv("C:\\Users\\admin\\Desktop\\python\\heart.csv")
+data=pd.read_csv("heart.csv")
+
 data=data.drop(columns=["Target"])
 
 
