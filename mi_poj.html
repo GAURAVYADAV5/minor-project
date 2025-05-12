@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <div class="form-group">
+        {{ form.age.label(class="form-label") }}
+        {{ form.age(class="form-control") }}
+        {% for error in form.age.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.sex.label(class="form-label") }}
+        {{ form.sex(class="form-control") }}
+        {% for error in form.sex.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.chest_pain.label(class="form-label") }}
+        {{ form.chest_pain(class="form-control") }}
+        {% for error in form.chest_pain.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.resting_blood_pressur.label(class="form-label") }}
+        {{ form.resting_blood_pressur(class="form-control") }}
+        {% for error in form.resting_blood_pressur.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.cholesterol.label(class="form-label") }}
+        {{ form.cholesterol(class="form-control") }}
+        {% for error in form.cholesterol.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.fasting_blood_sugar.label(class="form-label") }}
+        {{ form.fasting_blood_sugar(class="form-control") }}
+        {% for error in form.fasting_blood_sugar.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.electrocardiographic_results.label(class="form-label") }}
+        {{ form.electrocardiographic_results(class="form-control") }}
+        {% for error in form.electrocardiographic_results.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.heart_rate.label(class="form-label") }}
+        {{ form.heart_rate(class="form-control") }}
+        {% for error in form.heart_rate.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.exercise_induced_angina.label(class="form-label") }}
+        {{ form.exercise_induced_angina(class="form-control") }}
+        {% for error in form.exercise_induced_angina.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.st_depression.label(class="form-label") }}
+        {{ form.st_depression(class="form-control") }}
+        {% for error in form.st_depression.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.slope.label(class="form-label") }}
+        {{ form.slope(class="form-control") }}
+        {% for error in form.slope.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.ca.label(class="form-label") }}
+        {{ form.ca(class="form-control") }}
+        {% for error in form.ca.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.thal.label(class="form-label") }}
+        {{ form.thal(class="form-control") }}
+        {% for error in form.thal.errors %}
+            <div class="error-message">{{ error }}</div>
+        {% endfor %}
+    </div>
+
+    <div class="form-group">
+        {{ form.submit(class="submit-btn") }}
+    </div>
+
+    {% if output %}
+    <div class="prediction-result">
+        <strong><i class="fas fa-heartbeat heart-icon"></i> <b>Prediction Result:</b></strong> 
+        <p>1:Servive<br>
+            0: Not Servive
+        </p>
+        <br>
+        {{ output }}
+    </div>
+    {% endif %}
+
+    <div class="form-group text-center">
+        <a href="{{ url_for('home') }}" class="btn home-btn"><i class="fas fa-home"></i> Return to Homepage</a>
+    </div>
+</form>
+<div class="form-group text-center">
+        <a href="{{ url_for('information') }}" class="btn home-btn"><i class="fas fa-home"></i> Return to Information Page</a>
+    </div>
+</form>
+{% endblock %}
