@@ -1,0 +1,88 @@
+{% extends"layout.html"%}
+{%block content%}
+<p><b>Age:-</b><br>
+
+This represents the age of the individual in years. Age is a crucial risk factor for heart disease, with the likelihood of developing cardiovascular conditions increasing as a person grows older. It helps models understand the age-related trends in heart health.</p>
+
+<br>
+<p><b>Sex:-</b><br>
+This denotes the biological sex of the individual. Typically encoded as 0 for female and 1 for male in many datasets. Males often have a higher risk of heart disease earlier in life compared to females, making this a significant predictor.
+
+</p>
+<br>
+<p><b>Chest_Pain:-</b><br>
+Chest pain type indicates the nature of the chest discomfort experienced by the patient. It is usually categorized into 4 types:
+
+1.Typical angina
+
+2.Atypical angina
+
+3.Non-anginal pain
+
+4.Asymptomatic
+The type of chest pain provides important insight into the likelihood and severity of heart disease.
+
+</p>
+<br>
+<p><b>Resting_Blood_Pressur:-</b><br>
+This is the resting blood pressure in mm Hg on admission to the hospital. Elevated blood pressure (hypertension) is a well-established risk factor for cardiovascular disease as it can strain the heart and arteries.</p>
+<br>
+<p><b>Cholesterol:-</b><br>
+This refers to the serum cholesterol level in mg/dL. High cholesterol levels, particularly high LDL (bad cholesterol), contribute to plaque buildup in arteries, raising the risk of coronary artery disease and heart attacks.</p>
+<br>
+<p><b>Fasting_Blood_Sugar:-</b><br>
+This is a binary indicator (> 120 mg/dL), showing whether the patient's fasting blood sugar exceeds 120 mg/dL. Elevated fasting glucose levels can indicate diabetes, which significantly increases the risk of cardiovascular disease.</p>
+<br>
+<p><b>Electrocardiographic_Results:-</b><br>
+This field records the results of the resting electrocardiogram (ECG), often categorized as:
+
+Normal
+
+Having ST-T wave abnormality
+
+Showing signs of left ventricular hypertrophy
+These patterns help in diagnosing electrical activity abnormalities of the heart, which are associated with cardiac issues.</p>
+<br>
+<p><b>Heart_Rate:-</b><br>
+Maximum heart rate achieved during exercise testing. Lower maximum heart rates can indicate poor cardiovascular fitness or heart blockages. This value helps assess exercise tolerance and cardiac response to stress.</p>
+<br>
+<p><b>Exercise_Induced_Angina:-</b><br>
+This indicates whether angina (chest pain) occurs during exercise (1 = Yes, 0 = No). It is a marker for coronary artery disease, as exertion often reveals underlying heart problems that are not present at rest.</p>
+<br>
+<p><b>ST_Depression:-</b><br>
+ST depression refers to the amount of depression in the ST segment of the ECG (in mm) during peak exercise relative to rest. ST segment changes during exercise stress testing can be a strong indicator of myocardial ischemia (reduced blood flow to the heart muscle).
+
+</p>
+<br>
+<p><b>Slope:-</b><br>
+This represents the slope of the peak exercise ST segment:
+
+Upsloping (less likely heart disease)
+
+Flat (moderate risk)
+
+Downsloping (high risk)
+The slope indicates how the ST segment behaves under stress and can point to potential blockages in coronary arteries.</p>
+<br>
+<p><b>Ca:-</b><br>
+The number of major vessels (0–3) colored by fluoroscopy. A higher number means more visible blockages in major blood vessels, which strongly correlates with the presence of coronary artery disease.</p>
+<br>
+<p><b>Thal:-</b><br>
+Short for thalassemia, a blood disorder that affects hemoglobin production. In this dataset, it refers to types of thalassemia detected by imaging:
+
+Normal
+
+Fixed defect (no blood flow in a part of the heart)
+
+Reversible defect (temporary blood flow issues)
+This feature helps in assessing past heart damage or reduced oxygen delivery to heart tissue.</p>
+<br>
+<p><b>Prediction:-</b><br>
+This is the output variable indicating the presence (1) or absence (0) of heart disease. It's the variable that models are trained to predict, based on all other features. The goal of classification is to predict this label accurately.</p>
+<div class="form-group text-center">
+        <a href="{{ url_for('home') }}" class="btn home-btn"><i class="fas fa-home"></i> Return to Homepage</a>
+    </div>
+
+<a href="{{url_for('predict')}}" class="btn">Prediction Page <i class="fas fa-arrow-right"></i></a>    
+
+{%endblock%}
